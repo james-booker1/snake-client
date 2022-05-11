@@ -1,5 +1,6 @@
 //server
 
+const { write } = require("fs");
 const net = require("net");
 
 // establishes a connection with the game server
@@ -16,7 +17,18 @@ conn.on("connect", () => {
   console.log("Successfully connected to game server");
  
 })
-
+conn.on("connect", () => {
+ /*
+  setTimeout(() => {
+   conn._write("Move: up");  
+  }, 3000);
+  setInterval(() => {
+  conn._write("Move: down");  
+  }, 1000)
+  */
+  
+  
+})
   conn.on("data",(data) =>{
     console.log("server says: ", data)
   });
